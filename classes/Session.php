@@ -20,6 +20,8 @@ class Session {
         }
     }
     
+    // fläshää sivun/merkkijonon, esim "kirjauduttu onnistuneesti"
+    // seuraavan kerran ku f5, niin häipyy
     public static function flash($name, $string = '') {
         if(self::exists($name)) {
             $session = self::get($name);

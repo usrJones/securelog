@@ -2,6 +2,7 @@
 
 class Cookie {
     public static function exists($name) {
+        // jos asetettu: true, muuten false
         return (isset($_COOKIE[$name])) ? true : false;
     }
     

@@ -2,7 +2,7 @@
 require_once 'core/init.php';
 
 if(Input::exists()) {
-    if(Token::check(Input::get('token'))) { // if input by url, it wont run the following code
+    if(Token::check(Input::get('token'))) { // if input by url, it wont run the following code, eli xss esto
         $validate = new Validate();
         $validation = $validate->check($_POST, array(
             'username' => array(

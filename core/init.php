@@ -18,12 +18,14 @@ $GLOBALS['config'] = array(
     )
 );
 
+// autoloaderi
 spl_autoload_register(function($class) {
     require_once 'classes/' . $class . '.php'; 
 });
 
 require_once 'functions/sanitize.php';
 
+// tarkistaa kekseistä, että onko jengi tikannut "remember me" checkboxin
 if(Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))) {
     $hash = Cookie::get(Config::get('remember/cookie_name'));
     $hashCheck = DBrobots::getInstance()->get('users_session', array('hash', '=', $hash));

@@ -47,7 +47,7 @@ class DBrobots {
                 $this->_error = true;
             }
         }
-        return $this; // returns the current object we're working with
+        return $this; // palauttaa objektin, jonka kanssa työskentelemme
     }
     
     // get funkkari, jossa pakollinen WHERE-ehto
@@ -70,7 +70,7 @@ class DBrobots {
         return false;
     }
     
-    // customi get all funkkari
+    // customi get all funkkari, ei WHERE ehtoa
     private function actioni($action, $table) {
         $sql = "{$action} FROM {$table}";
         
@@ -79,14 +79,14 @@ class DBrobots {
         }
     }
     
-    // toptenaction
+    // toptenaction here todo lolol
     
     // seuraavat lätkäsee kaikki parametrien mukaisesti action() metodiin
     public function get($table, $where) {
         return $this->action('SELECT *', $table, $where);
     }
     
-    // kustomi kutsufunkkari
+    // kustomi kutsufunkkari, ilman WHERE ehota
     public function getEmAll($table) {
         return $this->actioni('SELECT *', $table);
     }
