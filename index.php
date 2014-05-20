@@ -84,4 +84,4 @@ if($user->isLoggedIn()) {
     echo '<p>You need to <a href="login.php">login</a> or <a href="register.php">register</a></p>';
 }
 
-
+// iso committi
